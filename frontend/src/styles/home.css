@@ -9,136 +9,10 @@
   margin: 0 auto;
   padding: 0 20px;
 }
-/* Mission Section */
-.mission-section {
-  padding: 80px 2rem;
-  background: #ffffff;
-}
-
-.mission-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  align-items: center;
-}
-
-.mission-text h2 {
-  font-size: 2.2rem;
-  margin-bottom: 1rem;
-  color: #1e293b;
-}
-
-.mission-text p {
-  color: #64748b;
-  line-height: 1.6;
-  margin-bottom: 2rem;
-}
-
-.mission-points {
-  display: grid;
-  gap: 1.5rem;
-}
-
-.mission-point {
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-}
-
-.mission-point .point-icon {
-  font-size: 1.8rem;
-}
-
-.mission-photo .photo-placeholder {
-  background: #f1f5f9;
-  border-radius: 12px;
-  padding: 3rem;
-  text-align: center;
-  font-size: 1.2rem;
-  color: #475569;
-}
-
-/* Structure Section */
-.structure-section {
-  padding: 80px 2rem;
-  background: #f8fafc;
-}
-
-.structure-grid {
-  display: grid;
-  gap: 3rem;
-}
-
-.structure-level {
-  background: white;
-  border-radius: 12px;
-  padding: 2rem;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-}
-
-.level-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1.5rem;
-}
-
-.level-header h3 {
-  color: #1e293b;
-}
-
-.level-badge {
-  background: #e2e8f0;
-  padding: 0.3rem 1rem;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: #475569;
-}
-
-.level-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-}
-
-.level-responsibilities ul {
-  list-style: disc;
-  margin-left: 1.5rem;
-  color: #64748b;
-  line-height: 1.6;
-}
-
-/* Gallery Section */
-.gallery-section {
-  padding: 80px 2rem;
-  background: white;
-}
-
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-}
-
-.gallery-item .photo-placeholder {
-  background: #f1f5f9;
-  border-radius: 12px;
-  padding: 3rem;
-  text-align: center;
-  font-size: 1.2rem;
-  color: #475569;
-  transition: transform 0.3s ease;
-}
-
-.gallery-item .photo-placeholder:hover {
-  transform: scale(1.03);
-}
-
 
 /* Header Styles */
 .home-header {
-  background: rgba(254, 254, 254, 0.95);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
   position: fixed;
   top: 0;
@@ -155,7 +29,6 @@
   max-width: 1200px;
   margin: 0 auto;
 }
-
 
 .nav-brand a {
   font-size: 1.5rem;

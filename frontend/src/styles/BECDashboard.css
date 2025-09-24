@@ -1,0 +1,270 @@
+/* BECDashboard.css */
+.bec-dashboard {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.dashboard-header {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    display: flex;
+    justify-content: between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.welcome-section h2 {
+    margin: 0 0 10px 0;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #2d3748;
+}
+
+.welcome-section p {
+    margin: 0 0 15px 0;
+    color: #718096;
+    font-size: 1.1rem;
+}
+
+.branch-info {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.branch-name {
+    background: #4299e1;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.member-role {
+    background: #edf2f7;
+    color: #4a5568;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.quick-stats {
+    display: flex;
+    gap: 30px;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2d3748;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: #718096;
+    font-weight: 500;
+}
+
+.dashboard-tabs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.tab-button {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    background: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.tab-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.tab-button.active {
+    background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+    color: white;
+    box-shadow: 0 5px 20px rgba(66, 153, 225, 0.3);
+}
+
+.tab-icon {
+    font-size: 2rem;
+    opacity: 0.9;
+}
+
+.tab-button.active .tab-icon {
+    opacity: 1;
+    filter: brightness(1.2);
+}
+
+.tab-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.tab-label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.tab-description {
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+.tab-button.active .tab-description {
+    opacity: 0.9;
+}
+
+.dashboard-content {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    min-height: 500px;
+}
+
+.loading-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+    gap: 15px;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #e2e8f0;
+    border-left: 4px solid #4299e1;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Share Options Styling */
+.share-options {
+    display: flex;
+    gap: 10px;
+    margin: 15px 0;
+    flex-wrap: wrap;
+}
+
+.share-option {
+    padding: 8px 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 20px;
+    background: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.share-option.selected {
+    background: #4299e1;
+    color: white;
+    border-color: #4299e1;
+}
+
+.share-option:hover {
+    border-color: #4299e1;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .dashboard-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .quick-stats {
+        justify-content: center;
+    }
+    
+    .branch-info {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .bec-dashboard {
+        padding: 15px;
+    }
+    
+    .dashboard-header {
+        padding: 20px;
+    }
+    
+    .welcome-section h2 {
+        font-size: 1.6rem;
+    }
+    
+    .dashboard-tabs {
+        grid-template-columns: 1fr;
+    }
+    
+    .tab-button {
+        padding: 15px;
+    }
+    
+    .dashboard-content {
+        padding: 20px;
+    }
+    
+    .quick-stats {
+        gap: 20px;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .bec-dashboard {
+        padding: 10px;
+    }
+    
+    .dashboard-header {
+        padding: 15px;
+    }
+    
+    .quick-stats {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .branch-info {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

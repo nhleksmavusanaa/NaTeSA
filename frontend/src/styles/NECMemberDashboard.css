@@ -1,0 +1,239 @@
+/* NECMemberDashboard.css */
+.nec-member-dashboard {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.dashboard-welcome {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.dashboard-welcome h2 {
+    margin: 0 0 10px 0;
+    font-size: 2.2rem;
+    font-weight: 600;
+}
+
+.dashboard-welcome p {
+    margin: 0;
+    font-size: 1.1rem;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+.dashboard-tabs {
+    display: flex;
+    background: white;
+    border-radius: 15px;
+    padding: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.tab-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 25px;
+    border: none;
+    background: transparent;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #555;
+    flex: 1;
+    min-width: 200px;
+    justify-content: center;
+}
+
+.tab-button:hover {
+    background: #f8f9fa;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.tab-button.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.tab-icon {
+    font-size: 1.2rem;
+}
+
+.dashboard-content {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    min-height: 500px;
+}
+
+/* Loading state */
+.dashboard-content.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .tab-button {
+        min-width: 150px;
+        padding: 12px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .nec-member-dashboard {
+        padding: 15px;
+    }
+    
+    .dashboard-tabs {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .tab-button {
+        min-width: 100%;
+        justify-content: flex-start;
+    }
+    
+    .dashboard-welcome {
+        padding: 20px;
+    }
+    
+    .dashboard-welcome h2 {
+        font-size: 1.8rem;
+    }
+    
+    .dashboard-content {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nec-member-dashboard {
+        padding: 10px;
+    }
+    
+    .dashboard-welcome {
+        padding: 15px;
+    }
+    
+    .dashboard-welcome h2 {
+        font-size: 1.5rem;
+    }
+    
+    .dashboard-content {
+        padding: 15px;
+    }
+    
+    .tab-button {
+        padding: 10px 15px;
+        font-size: 0.85rem;
+    }
+}
+
+/* Animation for tab transitions */
+.dashboard-content {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Print styles */
+@media print {
+    .nec-member-dashboard {
+        background: white !important;
+        padding: 0 !important;
+    }
+    
+    .dashboard-tabs {
+        display: none !important;
+    }
+    
+    .dashboard-welcome {
+        background: white !important;
+        color: black !important;
+        box-shadow: none !important;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .tab-button {
+        border: 2px solid #333;
+    }
+    
+    .tab-button.active {
+        border: 2px solid #000;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .tab-button {
+        transition: none;
+    }
+    
+    .dashboard-content {
+        animation: none;
+    }
+    
+    .tab-button:hover {
+        transform: none;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .nec-member-dashboard {
+        background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+        color: #ecf0f1;
+    }
+    
+    .dashboard-content,
+    .dashboard-tabs {
+        background: #2c3e50;
+        color: #ecf0f1;
+    }
+    
+    .tab-button {
+        color: #bdc3c7;
+        background: #34495e;
+    }
+    
+    .tab-button:hover {
+        background: #3d566e;
+    }
+    
+    .tab-button.active {
+        background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+        color: white;
+    }
+}

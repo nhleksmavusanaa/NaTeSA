@@ -54,13 +54,13 @@ body {
 }
 
 .nav-links a {
-  color: #c2b71bff
+  color: white;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-  color: #1d395bff;
+  color: #60a5fa;
 }
 
 .btn-register {

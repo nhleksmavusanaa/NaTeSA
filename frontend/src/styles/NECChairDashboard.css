@@ -1,0 +1,374 @@
+/* NECChairDashboard.css */
+.nec-chair-dashboard {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0c2461 0%, #1e3799 50%, #4a69bd 100%);
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.dashboard-welcome {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.98) 100%);
+    color: #2c3e50;
+    padding: 40px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-left: 6px solid #e74c3c;
+    position: relative;
+    overflow: hidden;
+}
+
+.dashboard-welcome::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #e74c3c, #3498db, #2ecc71);
+}
+
+.dashboard-welcome h2 {
+    margin: 0 0 15px 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #2c3e50, #3498db);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.dashboard-welcome p {
+    margin: 0;
+    font-size: 1.2rem;
+    opacity: 0.8;
+    font-weight: 500;
+    color: #7f8c8d;
+}
+
+.dashboard-tabs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.tab-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 25px 20px;
+    border: none;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 1rem;
+    font-weight: 600;
+    color: #2c3e50;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+.tab-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 0.5s;
+}
+
+.tab-button:hover::before {
+    left: 100%;
+}
+
+.tab-button:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    background: white;
+}
+
+.tab-button.active {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+    color: white;
+    box-shadow: 0 10px 25px rgba(231, 76, 60, 0.3);
+    transform: translateY(-2px);
+}
+
+.tab-button.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 4px;
+    background: white;
+    border-radius: 2px;
+}
+
+.tab-icon {
+    font-size: 2rem;
+    filter: grayscale(0.3);
+    transition: all 0.3s ease;
+}
+
+.tab-button.active .tab-icon {
+    filter: grayscale(0) brightness(1.2);
+    transform: scale(1.1);
+}
+
+.dashboard-content {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    min-height: 600px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Loading state */
+.dashboard-content.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+/* Enhanced animations */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dashboard-content > * {
+    animation: slideIn 0.5s ease-out;
+}
+
+/* Status indicators */
+.status-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 4px 8px;
+    background: #2ecc71;
+    color: white;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .dashboard-tabs {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .nec-chair-dashboard {
+        padding: 15px;
+    }
+    
+    .dashboard-welcome {
+        padding: 30px 20px;
+    }
+    
+    .dashboard-welcome h2 {
+        font-size: 2rem;
+    }
+    
+    .dashboard-tabs {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    
+    .tab-button {
+        padding: 20px 15px;
+        font-size: 0.9rem;
+    }
+    
+    .dashboard-content {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nec-chair-dashboard {
+        padding: 10px;
+    }
+    
+    .dashboard-welcome {
+        padding: 20px 15px;
+        border-radius: 15px;
+    }
+    
+    .dashboard-welcome h2 {
+        font-size: 1.6rem;
+    }
+    
+    .dashboard-welcome p {
+        font-size: 1rem;
+    }
+    
+    .dashboard-tabs {
+        grid-template-columns: 1fr;
+    }
+    
+    .tab-button {
+        flex-direction: row;
+        justify-content: flex-start;
+        padding: 15px 20px;
+    }
+    
+    .dashboard-content {
+        padding: 20px 15px;
+        border-radius: 15px;
+    }
+}
+
+/* Print styles */
+@media print {
+    .nec-chair-dashboard {
+        background: white !important;
+        padding: 0 !important;
+    }
+    
+    .dashboard-tabs {
+        display: none !important;
+    }
+    
+    .dashboard-welcome {
+        background: white !important;
+        color: black !important;
+        box-shadow: none !important;
+        border-left: 3px solid #000 !important;
+    }
+    
+    .dashboard-content {
+        box-shadow: none !important;
+        background: white !important;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .tab-button {
+        border: 2px solid #000;
+    }
+    
+    .tab-button.active {
+        border: 3px solid #000;
+    }
+    
+    .dashboard-welcome {
+        border: 2px solid #000;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .tab-button {
+        transition: none;
+    }
+    
+    .tab-button:hover {
+        transform: none;
+    }
+    
+    .dashboard-content > * {
+        animation: none;
+    }
+    
+    .tab-button::before {
+        display: none;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .nec-chair-dashboard {
+        background: linear-gradient(135deg, #0a1930 0%, #152642 50%, #1c3a6a 100%);
+    }
+    
+    .dashboard-content {
+        background: rgba(26, 32, 44, 0.95);
+        color: #e2e8f0;
+    }
+    
+    .tab-button {
+        background: rgba(45, 55, 72, 0.95);
+        color: #e2e8f0;
+    }
+    
+    .tab-button:hover {
+        background: #2d3748;
+    }
+    
+    .tab-button.active {
+        background: linear-gradient(135deg, #e53e3e 0%, #c53030 100%);
+    }
+    
+    .dashboard-welcome {
+        background: linear-gradient(135deg, rgba(26, 32, 44, 0.95) 0%, rgba(30, 41, 59, 0.98) 100%);
+        color: #e2e8f0;
+    }
+}
+
+/* Special chairperson features */
+.chairperson-badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: #e74c3c;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    box-shadow: 0 3px 10px rgba(231, 76, 60, 0.3);
+}
+
+/* Emergency/priority indicators */
+.priority-indicator {
+    position: absolute;
+    top: 50%;
+    left: -5px;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    background: #e74c3c;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: translateY(-50%) scale(1); opacity: 1; }
+    50% { transform: translateY(-50%) scale(1.5); opacity: 0.7; }
+    100% { transform: translateY(-50%) scale(1); opacity: 1; }
+}
+
+/* Enhanced focus states for accessibility */
+.tab-button:focus {
+    outline: 3px solid #3498db;
+    outline-offset: 2px;
+}
+
+.tab-button:focus:not(.active) {
+    background: #ecf0f1;
+    transform: translateY(-2px);
+}
